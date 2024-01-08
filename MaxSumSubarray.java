@@ -1,6 +1,23 @@
 // task is to find out the subarray that contains the max sum that is max sum contigous array
 
 public class MaxSumSubarray {
+    // this is the kadane algo to solve these subaray patterns 
+    // sor every element initialize the sum , if sum < 0 then again make it zero and if it is +ve leave it 
+    private static int maxSubArray(int[] nums) {
+        int max =  Integer.MIN_VALUE;
+        int sum =0;
+        for(int i =0;i<nums.length;i++){
+            sum += nums[i];
+            if(sum>max){
+                max = sum;
+            }
+            if(sum<0){
+                sum =0 ;
+            }
+        }
+        return max;
+    }
+
 public static void main(String[] args) {
 
     int[] arr = {-2,1,-3,4,-1,2,1,-5,4} ; 
@@ -14,6 +31,9 @@ public static void main(String[] args) {
             max= Math.max(max, sum);
         }
     }
-    System.out.println(max);
+    System.out.print(max);
+    // kadanes algo
+    System.out.println(maxSubArray(arr));
+    
     }
 }
