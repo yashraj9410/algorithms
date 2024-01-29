@@ -1,6 +1,7 @@
 
 
 package BinarySearch;
+import java.util.*;
 
 public class Search2DArrayII {
     public boolean searchMatrix(int[][] matrix, int target) {
